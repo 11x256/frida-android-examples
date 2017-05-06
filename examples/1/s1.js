@@ -1,5 +1,6 @@
 console.log("Script loaded successfully ");
-Java.perform(function x(){
+Java.perform(function x(){ //Silently fails without the sleep from the python code
+    console.log("Inside java perform function");
     //get a wrapper for our class
     var my_class = Java.use("com.example.a11x256.frida_test.my_activity");
     //replace the original implmenetation of the function `fun` with our custom function
