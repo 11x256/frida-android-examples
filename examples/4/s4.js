@@ -6,7 +6,8 @@ Java.perform(function () {
         var string_to_recv;
         send(string_to_send); // send data to python code
         recv(function (received_json_object) {
-            string_to_recv = received_json_object.my_data
+            var string = Java.use("java.lang.String");
+            string_to_recv = string.$new(received_json_object.my_data);
         }).wait(); //block execution till the message is received
         return this.setText(string_to_recv);
     }
